@@ -3,6 +3,8 @@ NAME		= animals
 SRCS		= Animal.cpp \
 			  Dog.cpp \
 			  Cat.cpp \
+			  WrongAnimal.cpp \
+			  WrongCat.cpp \
 			  main.cpp
 OBJS		= $(SRCS:.cpp=.opp)
 

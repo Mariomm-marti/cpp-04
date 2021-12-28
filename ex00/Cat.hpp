@@ -1,6 +1,8 @@
 #ifndef CPP04_EX00_CAT_H_
 # define CPP04_EX00_CAT_H_
 
+# include "Animal.hpp"
+
 class Cat : public Animal
 {
 public:

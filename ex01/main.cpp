@@ -16,8 +16,9 @@ int		main(void)
 	std::cout << "--------- Testing deep copy-assignment" << std::endl;
 	delete animals[4];
 	animals[4] = animals[5];
+	delete animals[5];
 	
 	for (size_t i = 0; i < 10; i++)
-		if (i != 4)
+		if (i != 4 && i != 5)
 			delete animals[i];
 }

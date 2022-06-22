@@ -18,6 +18,7 @@ Animal::~Animal(void)
 
 Animal	&Animal::operator=(Animal const &rhs)
 {
+	std::cout << "[ANIMAL] Calling assignment operator" << std::endl;
 	_type = rhs._type;
 	return *this;
 }
@@ -25,6 +26,19 @@ Animal	&Animal::operator=(Animal const &rhs)
 std::string	Animal::getType(void) const
 {
 	return _type;
+}
+
+Brain const	*Animal::getBrain(void) const
+{
+	std::cout << "[ANIMAL] Warning called getBrain for default animal" << std::endl;
+	return NULL;
+}
+
+void	Animal::setBrain(size_t const id, std::string const text)
+{
+	(void)id;
+	(void)text;
+	std::cout << "[ANIMAL] Warning called setBrain for default animal" << std::endl;
 }
 
 void	Animal::makeSound(void) const

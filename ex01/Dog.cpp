@@ -23,6 +23,7 @@ Dog::~Dog(void)
 
 Dog	&Dog::operator=(Dog const &rhs)
 {
+	std::cout << "[DOG] Calling assignment operator" << std::endl;
 	Animal::operator=(rhs);
 	delete _brain;
 	_brain = new Brain(*(rhs.getBrain()));
@@ -32,6 +33,12 @@ Dog	&Dog::operator=(Dog const &rhs)
 Brain const	*Dog::getBrain(void) const
 {
 	return _brain;
+}
+
+void	Dog::setBrain(size_t const id, std::string const text)
+{
+	std::cout << "[DOG] Setting new idea" << std::endl;
+	_brain->ideas[id] = text;
 }
 
 void	Dog::makeSound(void) const

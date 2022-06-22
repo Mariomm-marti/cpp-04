@@ -15,6 +15,7 @@ public:
 
 	Cat			&operator=(Cat const &rhs);
 	Brain const	*getBrain(void) const;
+	void		setBrain(size_t const id, std::string const text);
 
 	void	makeSound(void) const;
 };

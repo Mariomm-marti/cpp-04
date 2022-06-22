@@ -23,8 +23,8 @@ Cat::~Cat(void)
 
 Cat	&Cat::operator=(Cat const &rhs)
 {
+	std::cout << "[CAT] Calling assignment operator" << std::endl;
 	Animal::operator=(rhs);
-	delete _brain;
 	_brain = new Brain(*(rhs.getBrain()));
 	return *this;
 }
@@ -32,6 +32,12 @@ Cat	&Cat::operator=(Cat const &rhs)
 Brain const	*Cat::getBrain(void) const
 {
 	return _brain;
+}
+
+void	Cat::setBrain(size_t const id, std::string const text)
+{
+	std::cout << "[CAT] Setting new idea" << std::endl;
+	_brain->ideas[id] = text;
 }
 
 void	Cat::makeSound(void) const

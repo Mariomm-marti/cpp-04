@@ -31,7 +31,7 @@ void	testGoodAnimal(void)
 void	testWrongAnimal(void)
 {
 	WrongAnimal	*animal;
-	WrongCat	*cat;
+	WrongAnimal	*cat;
 
 	animal = new WrongAnimal();
 	std::cout << "type of animal: " << animal->getType() << std::endl;

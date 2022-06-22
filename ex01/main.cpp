@@ -15,10 +15,12 @@ int		main(void)
 
 	std::cout << "--------- Testing deep copy-assignment" << std::endl;
 	delete animals[4];
+	static_cast<Dog *>(animals[5])->getBrain()->ideas[0] = "lorem ipsum";
 	animals[4] = animals[5];
-	delete animals[5];
+	static_cast<Dog *>(animals[5])->getBrain()->ideas[0] = "dolor sit amet";
+	std::cout << static_cast<Dog *>(animals[4])->getBrain()->ideas[0] << std::endl;
 	
 	for (size_t i = 0; i < 10; i++)
-		if (i != 4 && i != 5)
+		if (i != 4)
 			delete animals[i];
 }

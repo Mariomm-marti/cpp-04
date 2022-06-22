@@ -1,6 +1,6 @@
 NAME		= animals
 
-SRCS		= AAnimal.cpp \
+SRCS		= Animal.cpp \
 			  Cat.cpp \
 			  Dog.cpp \
 			  Brain.cpp \

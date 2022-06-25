@@ -27,11 +27,10 @@ Dog	&Dog::operator=(Dog const &rhs)
 	Animal::operator=(rhs);
 	delete _brain;
 	_brain = new Brain(*(rhs.getBrain()));
-	std::cout << "::::::::::::::" << _brain->ideas[0] << std::endl;
 	return *this;
 }
 
-Brain	*Dog::getBrain(void) const
+Brain const	*Dog::getBrain(void) const
 {
 	return _brain;
 }

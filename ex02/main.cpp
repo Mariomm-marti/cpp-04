@@ -38,4 +38,5 @@ int		main(void)
 	{
 		// Animal	animal; // uncomment to see compile error
 	}
+	system("leaks animals");
 }

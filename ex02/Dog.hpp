@@ -11,7 +11,7 @@ private:
 public:
 	Dog(void);
 	Dog(Dog const &copy);
-	~Dog(void);
+	virtual ~Dog(void);
 
 	Dog			&operator=(Dog const &rhs);
 	Brain const	*getBrain(void) const;

@@ -11,7 +11,7 @@ private:
 public:
 	Cat(void);
 	Cat(Cat const &copy);
-	~Cat(void);
+	virtual ~Cat(void);
 
 	Cat			&operator=(Cat const &rhs);
 	Brain const	*getBrain(void) const;

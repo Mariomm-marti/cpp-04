@@ -19,6 +19,8 @@ Character::~Character(void) { }
 Character	&Character::operator=(Character const &rhs)
 {
 	_name = rhs.getName();
+	for (size_t i = 0; i < 4; i++)
+		_equipped[i] = rhs.getEquipped(i)->clone();
 	return *this;
 }
 

@@ -9,7 +9,7 @@ class Ice : public AMateria
 public:
 	Ice(void);
 	Ice(Ice const &copy);
-	~Ice(void);
+	virtual ~Ice(void);
 
 	Ice			&operator=(Ice const &rhs);
 

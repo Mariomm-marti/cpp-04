@@ -5,7 +5,5 @@ int		main(void)
 {
 	Ice	*ice = new Ice();
 
-
-
 	delete ice;
 }

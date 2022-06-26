@@ -16,10 +16,7 @@ int		main(void)
 
 	std::cout << "--------- Testing deep copy-assignment" << std::endl;
 	delete animals[4];
-	static_cast<Dog *>(animals[5])->getBrain()->ideas[0] = "lorem ipsum";
 	animals[4] = animals[5];
-	static_cast<Dog *>(animals[5])->getBrain()->ideas[0] = "dolor sit amet";
-	std::cout << static_cast<Dog *>(animals[4])->getBrain()->ideas[0] << std::endl;
 	
 	for (size_t i = 0; i < 10; i++)
 		if (i != 4)
@@ -42,5 +39,13 @@ int		main(void)
 		std::cout << cat3.getBrain()->ideas[0] << std::endl;
 		std::cout << cat3.getBrain()->ideas[1] << std::endl;
 		delete cat;
+	}
+	std::cout << "<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<" << std::endl;
+	{
+		Dog	basic;
+		{
+			Dog	tmp = basic;
+		}
+
 	}
 }

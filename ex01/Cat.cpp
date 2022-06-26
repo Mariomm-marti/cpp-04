@@ -26,11 +26,10 @@ Cat	&Cat::operator=(Cat const &rhs)
 	std::cout << "[CAT] Calling assignment operator" << std::endl;
 	Animal::operator=(rhs);
 	_brain = new Brain(*(rhs.getBrain()));
-	std::cout << "::::::::::::::" << _brain->ideas[0] << std::endl;
 	return *this;
 }
 
-Brain	*Cat::getBrain(void) const
+Brain const	*Cat::getBrain(void) const
 {
 	return _brain;
 }

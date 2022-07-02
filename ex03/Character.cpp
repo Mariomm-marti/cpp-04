@@ -3,9 +3,17 @@
 #include "Character.hpp"
 #include "AMateria.hpp"
 
-Character::Character(void) : _name("DEFCHAR") { }
+Character::Character(void) : _name("DEFCHAR")
+{
+	for (size_t i = 0; i < 4; i++)
+		_equipped[i] = NULL;
+}
 
-Character::Character(std::string const &name) : _name(name) { }
+Character::Character(std::string const &name) : _name(name)
+{
+	for (size_t i = 0; i < 4; i++)
+		_equipped[i] = NULL;
+}
 
 Character::Character(Character const &copy)
 {
@@ -14,13 +22,31 @@ Character::Character(Character const &copy)
 		_equipped[i] = copy.getEquipped(i)->clone();
 }
 
-Character::~Character(void) { }
+Character::~Character(void)
+{
+	for (size_t i = 0; i < 4; i++)
+	{
+		if (_equipped[i])
+		{
+			delete _equipped[i];
+			_equipped[i] = NULL;
+		}
+	}
+}
 
 Character	&Character::operator=(Character const &rhs)
 {
 	_name = rhs.getName();
 	for (size_t i = 0; i < 4; i++)
-		_equipped[i] = rhs.getEquipped(i)->clone();
+	{
+		if (_equipped[i])
+		{
+			delete _equipped[i];
+			_equipped[i] = NULL;
+		}
+		if (rhs.getEquipped(i))
+			_equipped[i] = rhs.getEquipped(i)->clone();
+	}
 	return *this;
 }
 
@@ -38,8 +64,10 @@ void	Character::equip(AMateria *m)
 {
 	ssize_t	use_slot;
 
+	if (m == NULL)
+		return ;
 	use_slot = -1;
-	for (size_t i = 0; i < 4; i++)
+	for (size_t i = 0; i < 4 && use_slot == -1; i++)
 		if (_equipped[i] == NULL)
 			use_slot = i;
 	if (use_slot == -1)

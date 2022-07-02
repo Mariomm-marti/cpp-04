@@ -1,7 +1,9 @@
 NAME		= materia
 
 SRCS		= AMateria.cpp \
+			  MateriaSource.cpp \
 			  Ice.cpp \
+			  Cure.cpp \
 			  Character.cpp \
 			  main.cpp
 OBJS		= $(SRCS:.cpp=.opp)
